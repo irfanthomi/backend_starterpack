@@ -29,6 +29,9 @@ r_auth
 r_auth
     .route("/pengajar/")
     .get(pengajar.pengajarController);
+r_auth
+    .route("/pengajar/")
+    .post(pengajar.pengajarAddController);
 
 module.exports = {
     r_auth,
