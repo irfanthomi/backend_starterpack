@@ -1,0 +1,25 @@
+module.exports = {
+    db_host: process.env.DBHOST || "localhost",
+    db_access: {
+        {% for db in databases %}
+        {{ db.db_identifier }}: {
+            host: "localhost",
+            user: "{{ db.db_username }}",
+            password: "{{ db.db_password }}",
+            database: "{{ db.db_name }}"
+        }
+        {% endfor %}
+    },
+    pepper: "{{ pepper }}",
+    jwt_options: {
+        issuer: "{{ jwt_issuer }}",
+        subject: "",
+        audience: "auth_user",
+        algorithm: "RS256"
+    },
+    jwt_settings: {
+        expiry_token: "1h",
+        expiry_refresh: "8d"
+    },
+    port: process.env.PORT || 3011
+}

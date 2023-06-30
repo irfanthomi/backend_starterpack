@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>:: SISTEM MANAJEMEN KAMPUS ::</title>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>khs mahasiswa</title>
+</head>
+
+<style>
+    .hr hr{
+    border: 0;
+    border-bottom: 1px dashed #9e9e9e;
+    background: #9990;
+}
+.line hr{
+    border: solid 1px;
+}
+.container {
+    width       : 820px;
+    margin-left : auto;
+    margin-right: auto;
+}
+
+.logo img {
+    width: 87px;
+}
+
+.head {
+    display: flex;
+}
+
+.head-text {
+    text-align : center;
+    width      : 80%;
+    line-height: 22px;
+}
+
+.head1 {
+    font-size: 16px;
+}
+
+.head2 {
+    font-size: 22px;
+    padding  : 2px;
+}
+
+.head3 {
+    font-size: 16px;
+}
+
+.head4 {
+    font-size: 12px;
+}
+
+.title {
+    text-align : center;
+    font-size  : 25px;
+    font-family: sans-serif;
+}
+
+.bio {
+    display: flex;
+    padding: 10px 0px;
+}
+
+.bio .t-bio {
+    width      : 100%;
+    font-family: sans-serif;
+    font-size  : 12px;
+}
+
+.bio .t-bio th {
+    text-align: justify;
+}
+
+.tabel-data table {
+    width: 100%;
+}
+
+.tabel-data table thead tr {
+    border: solid 2px black;
+}
+
+.tabel-data table,
+.tabel-data th {
+    font-family    : sans-serif;
+    font-size      : 12px;
+    padding        : 5px;
+    border         : 1px solid black;
+    border-collapse: collapse;
+
+}
+
+.tabel-data table,
+.tabel-data td {
+    font-family    : sans-serif;
+    font-size      : 12px;
+    padding        : 5px;
+    border-bottom  : 1px solid black;
+    border-top     : 1px solid black;
+    border-collapse: collapse;
+
+}
+
+.tabel-data tfoot td {
+    text-align: center;
+
+}
+
+.t-footer {
+    padding-top: 10px;
+}
+
+.t-footer {
+    display: flex;
+
+}
+
+.t-footer .col {
+    width   : 50%;
+    height  : 120px;
+    position: relative;
+}
+
+.center {
+    text-align: center;
+}
+
+.top {
+    position: absolute;
+    top     : 0px;
+    width   : 100%;
+}
+
+.bottom {
+    width   : 100%;
+    position: absolute;
+    bottom  : 0px;
+}
+
+.baak {
+    text-align: center;
+    margin-top: 200px;
+}
+
+.qrcode{
+    position        : absolute;
+    top             : 50%;
+    left            : 50%;
+    transform       : translate(-50%, -50%);
+
+}
+.qrlogo{
+    position        : absolute;
+    top             : 50%;
+    left            : 50%;
+    transform       : translate(-50%, -50%);
+
+}
+</style>
+<body>
+    <section class="">
+        <div class="container">
+            <div class="head">
+                <div class="logo">
+                    <img class src="{{universityIcon}}" alt="universityIcon">
+                </div>
+                <div class="head-text">
+                    <div class="head1">Yayasan Perguruan Tinggi Padang</div>
+                    <div class="head2"><b>Universitas Ekasakti</b></div>
+                    <div class="head3"><i>Jl. Veteran Dalam No. 26 Padang</i></div>
+                    <div class="head4"><i>Telp. 0751-28859, Fax. 0751-32694, Website:www.unespadang.ac.id,
+                            Email:rektorat@unes.ac.id</i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container line">
+        <hr>
+    </div>
+    <section class="">
+        <div class="container">
+            <div class="title">
+                <strong>Kartu Hasil Studi</strong>
+            </div>
+            <div class="bio">
+                <table class="t-bio" aria-describedby="t-bio">
+                    <tr>
+                        <td><i>Nama</i></td>
+                        <td>:</td>
+                        <th scope="col">{{Nama}}</th>
+                    </tr>
+                    <tr>
+                        <td><em>NPM</em></td>
+                        <td>:</td>
+                        <th scope="col">{{Npm}}</th>
+                    </tr>
+                    <tr>
+                        <td><em>Dosen PA</em></td>
+                        <td>:</td>
+                        <th scope="col">{{DosenPA}}</th>
+                    </tr>
+                    <tr>
+                </table>
+                <table class="t-bio" aria-describedby="t-bio2">
+                    <tr>
+                        <td><em>Tahun Akademik</em></td>
+                        <td>:</td>
+                        <th scope="col">{{TahunAkademik}}</th>
+                    </tr>
+                    <tr>
+                        <td><em>Program Studi</em></td>
+                        <td>:</td>
+                        <th scope="col">{{ProgramStudi}}</th>
+                    </tr>
+                    <tr>
+                        <td><em>Prg Pendidikan</em></td>
+                        <td>:</td>
+                        <th scope="col">{{ProgramPendidikan}}</th>
+                    </tr>
+                    <tr>
+                </table>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="tabel-data">
+                <table aria-describedby="t-khs">
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Kode</th>
+                            <th scope="col">Matakuliah</th>
+                            <th scope="col">SKS</th>
+                            <th scope="col">Nilai</th>
+                            <th scope="col">Angka</th>
+                            <th scope="col">Bobot</th>
+                            <th scope="col">BxK</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{tableData}}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="7">
+                                Jumlah : {{totalSKS}} SKS
+                            </td>
+                            <td colspan="1">
+                                {{totalBxK}}
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <div class="col center">
+                    <div class=" top"> </div>
+                    <div class=" bottom">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="t-footer">
+                <div class="col ">
+                    <table aria-describedby="t-summary">
+                        <tr>
+                            <td>Index Prestasi Semester</td>
+                            <td>:</td>
+                            <td>{{ipkSemester}} </td>
+                        </tr>
+                        <tr>
+                            <td>Index Prestasi Komulatif</td>
+                            <td>:</td>
+                            <td>{{ipkKomulatif}} </td>
+                        </tr>
+                        <tr>
+                            <td>Max SKS Semester Depan</td>
+                            <td>:</td>
+                            <td>24 SKS</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="col center">
+                    <div class=" top"> Padang, {{todayDate}}</div>
+                    <div class=" bottom">
+                        <div class="text">Arsip untuk Prodi</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container hr">
+        <hr>
+    </div>
+    <section class="">
+        <div class="container">
+            <div class="head">
+                <div class="logo">
+                    <img clas src="img/logo.png" alt="">
+                </div>
+                <div class="head-text">
+                    <div class="head1">Yayasan Perguruan Tinggi Padang</div>
+                    <div class="head2"><b>Universitas Ekasakti</b></div>
+                    <div class="head3"><i>Jl. Veteran Dalam No. 26 Padang</i></div>
+                    <div class="head4"><i>Telp. 0751-28859, Fax. 0751-32694, Website:www.unespadang.ac.id,
+                            Email:rektorat@unes.ac.id</i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container line">
+        <hr>
+    </div>
+    <section class="">
+        <div class="container">
+            <div class="title">
+                <strong>Kartu Hasil Studi</strong>
+            </div>
+            <div class="bio">
+                <table class="t-bio" aria-describedby="t-bio">
+                    <tr>
+                        <td><i>Nama</i></td>
+                        <td>:</td>
+                        <th scope="col">{{Nama}}</th>
+                    </tr>
+                    <tr>
+                        <td><em>NPM</em></td>
+                        <td>:</td>
+                        <th scope="col">{{Npm}}</th>
+                    </tr>
+                    <tr>
+                        <td><em>Dosen PA</em></td>
+                        <td>:</td>
+                        <th scope="col">{{DosenPA}}</th>
+                    </tr>
+                    <tr>
+                </table>
+                <table class="t-bio" aria-describedby="t-bio2">
+                    <tr>
+                        <td><em>Tahun Akademik</em></td>
+                        <td>:</td>
+                        <th scope="col">{{TahunAkademik}}</th>
+                    </tr>
+                    <tr>
+                        <td><em>Program Studi</em></td>
+                        <td>:</td>
+                        <th scope="col">{{ProgramStudi}}</th>
+                    </tr>
+                    <tr>
+                        <td><em>Prg Pendidikan</em></td>
+                        <td>:</td>
+                        <th scope="col">{{ProgramPendidikan}}</th>
+                    </tr>
+                    <tr>
+                </table>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="tabel-data">
+                <table aria-describedby="t-khs">
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Kode</th>
+                            <th scope="col">Matakuliah</th>
+                            <th scope="col">SKS</th>
+                            <th scope="col">Nilai</th>
+                            <th scope="col">Angka</th>
+                            <th scope="col">Bobot</th>
+                            <th scope="col">BxK</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{tableData}}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="7">
+                                Jumlah : {{totalSKS}} SKS
+                            </td>
+                            <td colspan="1">
+                                {{totalBxK}}
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <div class="col center">
+                    <div class=" top"> </div>
+                    <div class=" bottom">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="t-footer">
+                <div class="col ">
+                    <table aria-describedby="t-summary">
+                        <tr>
+                            <td>Index Prestasi Semester</td>
+                            <td>:</td>
+                            <td>{{ipkSemester}} </td>
+                        </tr>
+                        <tr>
+                            <td>Index Prestasi Komulatif</td>
+                            <td>:</td>
+                            <td>{{ipkKomulatif}} </td>
+                        </tr>
+                        <tr>
+                            <td>Max SKS Semester Depan</td>
+                            <td>:</td>
+                            <td>24 SKS</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="col center">
+                    <div class=" top"> Padang, {{todayDate}}</div>
+                    <div class=" bottom">
+                        <div class="text">Untuk Mahasiswa</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
